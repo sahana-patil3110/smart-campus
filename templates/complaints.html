@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Complaints - Smart Campus</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>🏫 SMART CAMPUS</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('report') }}">Report Problem</a>
+
+            <a href="{{ url_for('complaints') }}">My Complaints</a>
+
+            <a href="/admin-login">Admin</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Complaints Section -->
+
+    <main>
+
+        <h1>My Complaints</h1>
+
+        <p>Track the complaints you have submitted.</p>
+
+
+        <!-- Complaint Table -->
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Complaint ID</th>
+
+                        <th>Student Name</th>
+
+                        <th>Problem</th>
+
+                        <th>Location</th>
+
+                        <th>Priority</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for complaint in complaints %}
+
+                    <tr>
+
+                        <td>{{ complaint[1] }}</td>
+
+                        <td>{{ complaint[2] }}</td>
+
+                        <td>{{ complaint[6] }}</td>
+
+                        <td>{{ complaint[7] }}</td>
+
+                        <td>{{ complaint[8] }}</td>
+
+                        <td>
+
+                            {% if complaint[4] == "Pending" %}
+
+                                <span class="status pending">
+                                    {{ complaint[4] }}
+                                </span>
+
+                            {% elif complaint[4] == "In Progress" %}
+
+                                <span class="status progress">
+                                    {{ complaint[4] }}
+                                </span>
+
+                            {% elif complaint[4] == "Resolved" %}
+
+                                <span class="status resolved">
+                                    {{ complaint[4] }}
+                                </span>
+
+                            {% else %}
+
+                                <span class="status">
+                                    {{ complaint[4] }}
+                                </span>
+
+                            {% endif %}
+
+                        </td>
+
+                    </tr>
+
+                    {% else %}
+
+                    <tr>
+
+                        <td colspan="6">
+                            No complaints found.
+                        </td>
+
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

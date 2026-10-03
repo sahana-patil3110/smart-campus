@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Complaints - Smart Campus</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav>
+        <h2>🏫 SMART CAMPUS</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/report">Report Problem</a>
+            <a href="/complaints">My Complaints</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <h1>My Complaints</h1>
+
+        <p>View your submitted complaints and their current status.</p>
+
+        <table border="1">
+
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>Student Name</th>
+                    <th>Complaint</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for complaint in complaints %}
+
+                <tr>
+                    <td>{{ complaint[1] }}</td>
+                    <td>{{ complaint[2] }}</td>
+                    <td>{{ complaint[3] }}</td>
+                    <td><strong>{{ complaint[4] }}</strong></td>
+                </tr>
+
+                {% else %}
+
+                <tr>
+                    <td colspan="4">
+                        No complaints submitted yet.
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </main>
+
+</body>
+
+</html>

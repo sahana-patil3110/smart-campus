@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report Problem - Smart Campus</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>🏫 SMART CAMPUS</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('report') }}">Report Problem</a>
+
+            <a href="{{ url_for('complaints') }}">My Complaints</a>
+
+            <a href="{{ url_for('admin_login') }}">Admin</a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <h1>Report a Problem</h1>
+
+        <p>Tell us about the problem you are facing on campus.</p>
+
+
+        <form
+            id="complaintForm"
+            action="{{ url_for('submit_complaint') }}"
+            method="POST"
+        >
+
+            <label for="name">Name</label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+
+            <label for="department">Department</label>
+
+            <select
+                id="department"
+                name="department"
+                required
+            >
+
+                <option value="">Select Department</option>
+
+                <option value="BCA">BCA</option>
+
+                <option value="BBA">BBA</option>
+
+                <option value="BCom">B.Com</option>
+
+                <option value="BA">BA</option>
+
+                <option value="BSc">B.Sc</option>
+
+            </select>
+
+
+            <label for="problem">Problem Type</label>
+
+            <select
+                id="problem"
+                name="problem"
+                required
+            >
+
+                <option value="">Select Problem</option>
+
+                <option value="Broken Light">💡 Broken Light</option>
+
+                <option value="Water Leakage">🚰 Water Leakage</option>
+
+                <option value="Damaged Furniture">🪑 Damaged Furniture</option>
+
+                <option value="Cleanliness">🧹 Cleanliness</option>
+
+                <option value="Restroom">🚻 Restroom Problem</option>
+
+                <option value="Wi-Fi">📶 Wi-Fi Problem</option>
+
+                <option value="Computer">🖥️ Computer/Lab Problem</option>
+
+                <option value="Other">Other</option>
+
+            </select>
+
+
+            <label for="location">Location</label>
+
+            <input
+                type="text"
+                id="location"
+                name="location"
+                placeholder="Example: Block A - Room 204"
+                required
+            >
+
+
+            <label for="description">Description</label>
+
+            <textarea
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Describe the problem..."
+                required
+            ></textarea>
+
+
+            <label for="priority">Priority</label>
+
+            <select
+                id="priority"
+                name="priority"
+                required
+            >
+
+                <option value="">Select Priority</option>
+
+                <option value="Low">Low</option>
+
+                <option value="Medium">Medium</option>
+
+                <option value="High">High</option>
+
+            </select>
+
+
+            <button type="submit">
+                SUBMIT COMPLAINT
+            </button>
+
+        </form>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login - Smart Campus</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>🏫 SMART CAMPUS</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('report') }}">Report Problem</a>
+
+            <a href="{{ url_for('complaints') }}">My Complaints</a>
+
+            <a href="{{ url_for('admin_login') }}">Admin</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Login Section -->
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <div class="login-icon">
+                👨‍💼
+            </div>
+
+            <h1>Admin Login</h1>
+
+            <p>Login to manage campus complaints.</p>
+
+
+            <form action="{{ url_for('admin_login') }}" method="POST">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="Enter username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+
+                <button type="submit">
+                    LOGIN
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

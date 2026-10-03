@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Campus</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+
+        <h2>🏫 SMART CAMPUS</h2>
+
+        <div>
+
+            <a href="{{ url_for('home') }}">Home</a>
+
+            <a href="{{ url_for('report') }}">Report Problem</a>
+
+            <a href="{{ url_for('complaints') }}">My Complaints</a>
+
+            <a href="/admin-login">Admin</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <main class="hero">
+
+        <h1>
+            Smart Campus Complaint System
+        </h1>
+
+        <p>
+            Report campus problems easily and track their resolution.
+        </p>
+
+        <a href="{{ url_for('report') }}" class="button">
+            Report a Problem
+        </a>
+
+    </main>
+
+
+    <!-- Problem Categories -->
+
+    <section class="categories">
+
+        <h2>Common Campus Problems</h2>
+
+        <div class="category-container">
+
+            <div class="category-card">
+                <div class="icon">💡</div>
+                <h3>Broken Lights</h3>
+                <p>Report electrical and lighting problems.</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="icon">🚰</div>
+                <h3>Water Leakage</h3>
+                <p>Report water supply and leakage issues.</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="icon">🪑</div>
+                <h3>Damaged Furniture</h3>
+                <p>Report damaged desks, benches and chairs.</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="icon">🧹</div>
+                <h3>Cleanliness</h3>
+                <p>Report cleaning and waste management issues.</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="icon">🚻</div>
+                <h3>Restroom Problems</h3>
+                <p>Report restroom maintenance problems.</p>
+            </div>
+
+
+            <div class="category-card">
+                <div class="icon">📶</div>
+                <h3>Wi-Fi Problems</h3>
+                <p>Report network and connectivity issues.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- How It Works -->
+
+    <section class="how-it-works">
+
+        <h2>How It Works</h2>
+
+        <div class="steps">
+
+            <div>
+                <span>1</span>
+                <h3>Report</h3>
+                <p>Submit your campus complaint.</p>
+            </div>
+
+
+            <div>
+                <span>2</span>
+                <h3>Track</h3>
+                <p>Check the status of your complaint.</p>
+            </div>
+
+
+            <div>
+                <span>3</span>
+                <h3>Resolve</h3>
+                <p>College staff resolve the issue.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
