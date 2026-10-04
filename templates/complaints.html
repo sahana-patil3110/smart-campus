@@ -82,36 +82,36 @@
 
                         <td>{{ complaint[2] }}</td>
 
-                        <td>{{ complaint[6] }}</td>
+                        <td>{{ complaint[4] }}</td>
+
+                        <td>{{ complaint[5] }}</td>
 
                         <td>{{ complaint[7] }}</td>
 
-                        <td>{{ complaint[8] }}</td>
-
                         <td>
 
-                            {% if complaint[4] == "Pending" %}
+                            {% if complaint[8] == "Pending" %}
 
                                 <span class="status pending">
-                                    {{ complaint[4] }}
+                                    {{ complaint[8] }}
                                 </span>
 
-                            {% elif complaint[4] == "In Progress" %}
+                            {% elif complaint[8] == "In Progress" %}
 
                                 <span class="status progress">
-                                    {{ complaint[4] }}
+                                    {{ complaint[8] }}
                                 </span>
 
-                            {% elif complaint[4] == "Resolved" %}
+                            {% elif complaint[8] == "Resolved" %}
 
                                 <span class="status resolved">
-                                    {{ complaint[4] }}
+                                    {{ complaint[8] }}
                                 </span>
 
                             {% else %}
 
                                 <span class="status">
-                                    {{ complaint[4] }}
+                                    {{ complaint[8] }}
                                 </span>
 
                             {% endif %}
